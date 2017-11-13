@@ -18,7 +18,7 @@ RUN apk add --no-cache --virtual TMP gcc g++ make openssl \
     && rm -rf /tmp/$PHP_DIR \
     && mkdir /web \
     && wget -O /web/index.php $FM_URL \
-    && apk del TMP \
+    && apk del TMP 
 
 VOLUME /web/file/
 EXPOSE 8080
