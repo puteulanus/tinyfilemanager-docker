@@ -20,6 +20,6 @@ RUN apk add --no-cache --virtual TMP gcc g++ make openssl \
     && apk del TMP
 
 VOLUME /web/file/
-EXPOSE 80
+EXPOSE 8080
 
 CMD php -S 127.0.0.1:8080 -t /web
