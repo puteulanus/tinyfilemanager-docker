@@ -16,7 +16,7 @@ RUN apk add --no-cache --virtual TMP gcc g++ make openssl \
     && mv sapi/cli/php /usr/local/bin/ \
     && rm -rf /tmp/$PHP_DIR \
     && mkdir /web \
-    && wget -O /web/index.php $FM_URL
+    && wget -O /web/index.php $FM_URL \
     && apk del TMP
 
 VOLUME /web/file/
