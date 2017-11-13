@@ -14,7 +14,8 @@ RUN apk add --no-cache --virtual TMP gcc g++ make \
     && ./configure --disable-all --enable-session --enable-cli --enable-static \
     && make -j$(nproc) \
     && mv sapi/cli/php /usr/local/bin/ \
-    && rm -rf /tmp/$PHP_DIR
+    && rm -rf /tmp/$PHP_DIR \
+    && apk del TMP
 
 RUN mkdir /web \
     && cd /web \
