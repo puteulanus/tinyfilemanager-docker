@@ -5,7 +5,7 @@ ENV PHP_URL http://us1.php.net/get/php-$PHP_VER.tar.gz/from/this/mirror
 ENV PHP_DIR php-$PHP_VER
 ENV FM_URL https://raw.githubusercontent.com/prasathmani/tinyfilemanager/master/tinyfilemanager.php
 
-RUN apk add --no-cache --virtual gcc g++ make \
+RUN apk add --no-cache --virtual TMP gcc g++ make \
     && cd /tmp \
     && wget -O php.tar.gz $PHP_URL \
     && tar zxf php.tar.gz \
