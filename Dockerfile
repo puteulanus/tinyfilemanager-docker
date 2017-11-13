@@ -5,6 +5,7 @@ ENV PHP_URL http://us1.php.net/get/php-$PHP_VER.tar.gz/from/this/mirror
 ENV PHP_DIR php-$PHP_VER
 ENV FM_URL https://raw.githubusercontent.com/prasathmani/tinyfilemanager/master/tinyfilemanager.php
 
+RUN apk add --no-cache file
 RUN apk add --no-cache --virtual TMP gcc g++ make openssl \
     && cd /tmp \
     && wget -O php.tar.gz $PHP_URL \
@@ -17,7 +18,7 @@ RUN apk add --no-cache --virtual TMP gcc g++ make openssl \
     && rm -rf /tmp/$PHP_DIR \
     && mkdir /web \
     && wget -O /web/index.php $FM_URL \
-    && apk del TMP
+    && apk del TMP \
 
 VOLUME /web/file/
 EXPOSE 8080
