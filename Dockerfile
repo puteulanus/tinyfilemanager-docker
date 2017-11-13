@@ -1,7 +1,7 @@
 FROM alpine
 
 ENV PHP_VER 7.1.11
-ENV PHP_URL http://php.net/get/php-$PHP_VER.tar.gz/from/this/mirror
+ENV PHP_URL http://us1.php.net/get/php-$PHP_VER.tar.gz/from/this/mirror
 ENV PHP_DIR php-$PHP_VER
 ENV FM_URL https://raw.githubusercontent.com/prasathmani/tinyfilemanager/master/tinyfilemanager.php
 
